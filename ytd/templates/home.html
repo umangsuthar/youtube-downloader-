@@ -2,11 +2,25 @@
 <html>
 <head>
 	<title></title>
+
+	<script type="text/javascript">
+		function download(d) 
+		{
+        	if (d == 'Select document') return;
+	        window.location = d;
+		}
+</script>
 </head>
 <body>
- {% for a in a1 %}
- 	<h3>{{a}}</h3><br>
- 	<h5>{{a.url}}</h5></br>
- {% endfor %}
+
+<div>
+    <select name="link" onchange="download(this.value)">
+		 {% for a in a1 %}
+       		 <option id="1" value={{a.url}}>{{a}}</option>
+        	
+		 	
+		 {% endfor %}
+    </select>
+</div>
 </body>
 </html>
