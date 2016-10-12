@@ -16,8 +16,6 @@ def main():
 		video = pafy.new(url)
 		streams = video.streams
 		return render_template('home.html', a1 = streams)
-
-	# url = "https://youtu.be/r9aE5gNSXxA"
 	
 		
 
