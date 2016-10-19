@@ -20,12 +20,17 @@
 <body>
 
 <div>
+	<h4>Title : {{video.title}}</h4>
+	<h5>Rating : {{video.rating}}</h5>
+	<h5>Likes : {{video.likes}}</h5>
+	<h5>Dislikes : {{video.dislikes}}</h5>
+	<h5>Total Views : {{ video.viewcount }}</h5>
+	<h5>Duration : {{video.duration }}</h5>
+	<h5>Author : {{video.author }}</h5>
+
     <select name="link" onchange="downloadd(this.value)">
-		 {% for a in a1 %}
-       		
-       		 <option id = '1' value={{a.url}}>{{a.quality}}</option>
-        	
-		 	
+		 {% for a in a1 %}       		
+       		 <option id = '1' value={{a.url}}>{{a.quality}}</option>	
 		 {% endfor %}
     </select>
 </div>

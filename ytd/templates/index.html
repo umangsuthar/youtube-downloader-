@@ -2,12 +2,37 @@
 <html>
 <head>
 	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- <script type="text/javascript">
 	
+		$(function(){
+			var url;
+   	 $('submit').click(function(){
+   	 	u = $("#u").val();
+   	 	/*alert(url);*/
+        /*$.post( '/home', { url1: u } ); */
+        	$.ajax({
+            url: '/home',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+
+    }); 
+});
+	
+
+	</script> -->
 </head>
 <body>
 
 <div>
-	<form action="/home" method="POST">
+	<form method="POST" action='/home' role="form">
 	<input type="text" name="u">
     <button type="submit" name="submit">Submit</button>
     </form>
