@@ -13,26 +13,34 @@
 	         aTag.innerHTML = d;
 	         document.body.appendChild(aTag);
 	         aTag.click();
-	         //document.body.removeChild(aTag);
+	         document.body.removeChild(aTag);
 		}
 </script>
 </head>
 <body>
 
 <div>
-	<h4>Title : {{video.title}}</h4>
-	<h5>Rating : {{video.rating}}</h5>
-	<h5>Likes : {{video.likes}}</h5>
-	<h5>Dislikes : {{video.dislikes}}</h5>
-	<h5>Total Views : {{ video.viewcount }}</h5>
-	<h5>Duration : {{video.duration }}</h5>
-	<h5>Author : {{video.author }}</h5>
-
-    <select name="link" onchange="downloadd(this.value)">
-		 {% for a in a1 %}       		
+	<h4>Title : {{videodet.title}}</h4>
+	<h5>Rating : {{videodet.rating}} Out Of 5</h5>
+	<h5>Likes : {{videodet.likes}}</h5>
+	<h5>Dislikes : {{videodet.dislikes}}</h5>
+	<h5>Total Views : {{ videodet.viewcount }}</h5>
+	<h5>Duration : {{videodet.duration }}</h5>
+	<h5>Author : {{videodet.author }}</h5>
+	<h3>Video Links</h3>
+    <select name="vlink" onchange="downloadd(this.value)">
+		 {% for a in video %}       		
        		 <option id = '1' value={{a.url}}>{{a.quality}}</option>	
 		 {% endfor %}
     </select>
+
+    <h3>Extrected Audio Links</h3>
+	<select name="alink" onchange="downloadd(this.value)">
+		 {% for a in audio %}       		
+       		 <option id = '1' value={{a.url}}>{{a.quality}}</option>	
+		 {% endfor %}
+    </select>    
+
 </div>
 </body>
 </html>

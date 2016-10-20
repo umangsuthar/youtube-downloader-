@@ -14,8 +14,11 @@ def main():
 	if request.method=='POST':
 		url= request.form['u']
 		video = pafy.new(url)
-		streams = video.streams
-		return render_template('home.html', a1 = streams, video = video)
+		vstreams = video.streams
+
+		astreams = video.audiostreams
+
+		return render_template('home.html', video = vstreams, videodet = video, audio = astreams)
 	else:
 		return "errorr"
 	
