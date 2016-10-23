@@ -16,17 +16,25 @@
 	         document.body.removeChild(aTag);
 		}
 </script>
+	<style type="text/css">
+		.bg-grey {
+    				background-color: #f6f6f6;
+				 }
+	</style>
 </head>
 <body>
-
+<div class="bg-grey">
+	<div class="row">
+		<h4>Title : {{videodet.title}}</h4>
+		<h5>Rating : {{videodet.rating}} Out Of 5</h5>
+		<h5>Likes : {{videodet.likes}}</h5>
+		<h5>Dislikes : {{videodet.dislikes}}</h5>
+		<h5>Total Views : {{ videodet.viewcount }}</h5>
+		<h5>Duration : {{videodet.duration }}</h5>
+		<h5>Author : {{videodet.author }}</h5>
+	</div>
+</div>
 <div>
-	<h4>Title : {{videodet.title}}</h4>
-	<h5>Rating : {{videodet.rating}} Out Of 5</h5>
-	<h5>Likes : {{videodet.likes}}</h5>
-	<h5>Dislikes : {{videodet.dislikes}}</h5>
-	<h5>Total Views : {{ videodet.viewcount }}</h5>
-	<h5>Duration : {{videodet.duration }}</h5>
-	<h5>Author : {{videodet.author }}</h5>
 	<h3>Video Links</h3>
     <select name="vlink" onchange="downloadd(this.value)">
 		 {% for a in video %}       		
